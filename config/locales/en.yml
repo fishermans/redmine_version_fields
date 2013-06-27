@@ -1,0 +1,8 @@
+# English strings go here for Rails i18n
+en:
+  field_affected_version: "Affected version"
+  field_isNotSupported: "Not under support"
+  label_version_supportstatus: "Support Status"
+  label_version_supportstatus_1: "Not supported"
+  label_version_supportstatus_0: "Supported"
+  

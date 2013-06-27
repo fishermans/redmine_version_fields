@@ -1,0 +1,13 @@
+<% unless @project.nil? ||  (@project.shared_versions.closed.supported.empty? && @project.shared_versions.open.supported.empty?) -%>
+  <li class="folder">
+    <a href="#" class="submenu"><%= l(:field_affected_version) %></a>
+    <ul>
+    <% @project.affected_versions.sort.each do |v| -%>
+        <li><%= context_menu_link format_version_name(v), {:controller => 'issues', :action => 'bulk_edit', :ids => @issues.collect(&:id), :issue => {'affected_version_id' => v}, :back_url => @back}, :method => :post,
+                                  :selected => (@issue && v == @issue.fixed_version), :disabled => !@can[:update] %></li>
+    <% end -%>
+        <li><%= context_menu_link l(:label_none), {:controller => 'issues', :action => 'bulk_edit', :ids => @issues.collect(&:id), :issue => {'affected_version_id' => 'none'}, :back_url => @back}, :method => :post,
+                                  :selected => (@issue && @issue.affected_version.nil?), :disabled => !@can[:update] %></li>
+    </ul>
+  </li>
+<% end %>

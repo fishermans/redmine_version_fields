@@ -1,0 +1,8 @@
+<tr>
+    <th class="fixed-version">
+        <%=l(:field_affected_version)%>:
+    </th>
+    <td class="fixed-version">
+        <%= @issue.affected_version ? link_to_version(@issue.affected_version) : "-" %>
+    </td>
+</tr>

@@ -1,0 +1,5 @@
+<% unless @issue.affected_versions.empty? %>
+<div class="splitcontentleft">
+     <p><%= f.select :affected_version_id,(@issue.affected_versions.collect{|v| [v.name, v.id]}), :include_blank => true %></p>
+</div>
+<% end %>
