@@ -1,7 +1,7 @@
 = Redmine Version Fields Plugin
 
-This plugin is intended to add an additional version field to issues to be able to select the affected version for an issue. The values are grepped from the target versions.
-
+This plugin is intended to add an additional version field to issues to be able to select the <b>affected version</b> for an issue. The values are grepped from the target versions.
+It also enables locked versions to be set as <b>target version</b>.
 
 Copyright (c) 2013 Fishermans
 
@@ -34,3 +34,4 @@ This plugin targets Redmine 2.3.1:
    of the directory is <tt>redmine_version_fields</tt>.
 2. Run <tt>rake redmine:plugins:migrate RAILS_ENV=production</tt> at Rails' root directory.
 3. Restart Redmine.
+4. You will find a checkbox <tt>supported version</tt> added to each version to enable or disable a certain version number to be selectable as affected version
